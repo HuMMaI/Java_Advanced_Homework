@@ -22,7 +22,7 @@ public class Accounting {
         return hospitalDayPayment * numberOfHospitalDays;
     }
 
-    public int salaryCalculation() throws HoursException {
+    public int salaryCalculation(){
         int salary;
         int hoursLimit = numberOfHoursInMonth - (numberOfHospitalDays * workingDayLength);
 

@@ -17,7 +17,7 @@ public class AccountingTest {
     }
 
     @Test
-    public void itSalaryCalculation() throws HoursException {
+    public void itSalaryCalculation(){
         int actual = accounting.salaryCalculation();
         int expected = 3400 - accounting.getFine();
 
@@ -25,7 +25,7 @@ public class AccountingTest {
     }
 
     @Test(expected = HoursException.class)
-    public void itSalaryCalculationWithHoursException() throws HoursException {
+    public void itSalaryCalculationWithHoursException(){
         accounting = new Accounting(20, 121, 120,
                 5, 10);
 

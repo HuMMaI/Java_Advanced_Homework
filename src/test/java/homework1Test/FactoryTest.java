@@ -14,38 +14,34 @@ import java.util.Set;
 
 public class FactoryTest {
     private Factory factory;
+    private Accounting accounting;
 
     @Before
     public void setup(){
         factory = new Factory();
+        accounting = new Accounting(20, 120, 120,
+                5, 10);
     }
 
     @After
     public void afterTest(){
         factory = null;
+        accounting = null;
     }
 
     @Test
-    public void itAddSalaryToWorker() throws HoursException {
-        Accounting accounting = new Accounting(20, 120, 120,
-                5, 10);
-
+    public void itAddSalaryToWorker(){
         factory.addSalaryToWorker(new Worker("Worker", "One", 22), accounting);
         factory.addSalaryToWorker(new Worker("Worker", "Two", 31), accounting);
     }
 
     @Test(expected = NullPointerException.class)
     public void itAddSalaryToWorkerWithException() throws HoursException {
-        Accounting accounting = new Accounting(20, 120, 120,
-                5, 10);
         factory.addSalaryToWorker(null, accounting);
     }
 
     @Test
-    public void itOutputAllWorkers() throws HoursException {
-        Accounting accounting = new Accounting(20, 120, 120,
-                5, 10);
-
+    public void itOutputAllWorkers(){
         factory.addSalaryToWorker(new Worker("Worker", "One", 22), accounting);
         factory.addSalaryToWorker(new Worker("Worker", "Two", 31), accounting);
 
