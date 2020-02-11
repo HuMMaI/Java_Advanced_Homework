@@ -26,8 +26,7 @@ public class AccountingTest {
 
     @Test(expected = HoursException.class)
     public void itSalaryCalculationWithHoursException(){
-        accounting = new Accounting(20, 121, 120,
-                5, 10);
+        accounting.setHoursWorked(121);
 
         int actual = accounting.salaryCalculation();
     }
